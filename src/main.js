@@ -157,8 +157,8 @@ $('#f').addEventListener('submit', async (e) => {
 
 // chat -> /api/chat (RAG)
 const lg = $('#log'), ch = $('#chat'), hist = [];
-function say(t, u, sources = []) {
-  const x = document.createElement('div'); x.className = 'b' + (u ? ' u' : ''); x.textContent = t;
+function say(txt, u, sources = []) {
+  const x = document.createElement('div'); x.className = 'b' + (u ? ' u' : ''); x.textContent = txt;
   const seen = new Set();
   sources.slice(0, 2).forEach((s) => {
     const sec = ZONE_TO_SECTION[s.zone]; if (!sec || seen.has(sec)) return; seen.add(sec);
