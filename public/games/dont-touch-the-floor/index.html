@@ -1,0 +1,153 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, viewport-fit=cover" />
+  <title>DON'T TOUCH THE FLOOR!</title>
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🌋</text></svg>" />
+  <script type="module" crossorigin src="./assets/index-jSEz1xlU.js"></script>
+  <link rel="stylesheet" crossorigin href="./assets/index-CGJkhIj2.css">
+</head>
+<body>
+  <canvas id="game-canvas"></canvas>
+  <div id="app">
+    <section id="screen-loading" class="screen show"><div class="loader"><div class="logo-sm">DON'T TOUCH<br>THE FLOOR!</div><p>Heating up the lava...</p></div></section>
+
+    <section id="screen-menu" class="screen">
+      <div class="menu-top">
+        <h1 class="logo"><span class="l1">DON'T TOUCH</span><span class="l2">THE FLOOR!</span></h1>
+        <p class="tagline">The floor is lava. The furniture is chaos.</p>
+        <div class="menu-buttons">
+          <button class="btn btn-hero" id="btn-play">Play</button>
+          <button class="btn" id="btn-levels">Levels</button>
+          <button class="btn" id="btn-chars">Characters</button>
+          <button class="btn" id="btn-howto">How to Play</button>
+          <button class="btn" id="btn-settings">Settings</button>
+        </div>
+        <p class="best">Best total score <b id="menu-best">0</b></p>
+      </div>
+      <p class="menu-hint">Click a character below to choose who jumps</p>
+    </section>
+
+    <section id="screen-levels" class="screen">
+      <div class="panel wide">
+        <h2>Choose a room</h2>
+        <div id="level-cards" class="cards"></div>
+        <div class="row"><button class="btn small" id="btn-levels-back">Back</button></div>
+      </div>
+    </section>
+
+    <section id="screen-chars" class="screen">
+      <div class="chars-top"><h2>Pick your jumper</h2><p id="char-desc" class="char-desc"></p></div>
+      <div class="chars-bottom">
+        <div id="char-stats" class="char-stats"></div>
+        <div class="row"><button class="btn small" id="btn-chars-back">Back</button><button class="btn btn-hero small" id="btn-chars-next">Choose a level</button></div>
+      </div>
+    </section>
+
+    <section id="hud" class="hidden">
+      <div class="hud-tl panel mini"><div id="hud-level" class="hud-title"></div><div class="hud-line">Score <b id="hud-score">0</b></div><div class="hud-line">🪙 <b id="hud-coins">0</b> &nbsp; ⭐ <b id="hud-stars">0</b></div></div>
+      <div class="hud-tc"><div id="hud-time" class="panel mini big">0:00</div><div id="hud-objective" class="panel mini objective"></div><div class="progress" title="Level progress"><i id="hud-progress"></i></div></div>
+      <div class="hud-tr"><div id="hud-lives" class="panel mini lives" aria-label="Lives"></div><div class="lava-gauge" title="Lava height"><div class="lava-fill" id="lava-fill"></div><div class="lava-player" id="lava-player"></div><span>LAVA</span></div></div>
+      <div class="hud-buttons"><button class="icon-btn" id="btn-hud-sound" title="Sound on/off">🔊</button><button class="icon-btn" id="btn-hud-pause" title="Pause (Esc)">⏸</button></div>
+      <div id="hud-powerups" class="hud-powerups"></div>
+      <div class="hud-hints">WASD / stick move · SPACE / Jump (twice for double) · SHIFT / Run sprint · E interact · Drag to look · ESC pause</div>
+      <div id="chaos-banner" class="chaos-banner"><span id="chaos-emoji"></span><b id="chaos-name"></b><small id="chaos-desc"></small></div>
+      <div id="lava-warn" class="lava-warn"></div>
+    </section>
+    <div id="toasts"></div><div id="floaters"></div><div id="tooltip" role="tooltip"></div>
+
+    <section id="screen-pause" class="screen dim"><div class="panel"><h2>Paused</h2>
+      <button class="btn btn-hero" id="btn-resume">Resume</button><button class="btn" id="btn-restart">Restart level</button><button class="btn" id="btn-pause-settings">Settings</button><button class="btn" id="btn-pause-menu">Main menu</button></div></section>
+
+    <section id="screen-complete" class="screen dim"><div class="panel wide"><h2 id="comp-title">Level complete!</h2><div class="rating" id="comp-rating">A</div>
+      <table class="stats"><tbody>
+        <tr><th>Completion time</th><td id="comp-time"></td></tr><tr><th>Coins</th><td id="comp-coins"></td></tr><tr><th>Stars</th><td id="comp-stars"></td></tr>
+        <tr><th>Falls</th><td id="comp-falls"></td></tr><tr><th>Near-miss bonuses</th><td id="comp-near"></td></tr><tr><th>Time + lives bonus</th><td id="comp-bonus"></td></tr>
+        <tr class="total"><th>Final score</th><td id="comp-score"></td></tr></tbody></table>
+      <p id="comp-best" class="newbest"></p>
+      <div class="row"><button class="btn" id="btn-comp-menu">Main menu</button><button class="btn" id="btn-comp-retry">Replay</button><button class="btn btn-hero" id="btn-comp-next">Next level</button></div></div></section>
+
+    <section id="screen-over" class="screen dim"><div class="panel"><h2>Game over</h2><p id="over-reason" class="reason"></p>
+      <p class="over-score">Final score <b id="over-score">0</b></p>
+      <div class="row"><button class="btn" id="btn-over-menu">Main menu</button><button class="btn btn-hero" id="btn-over-restart">Try again</button></div></div></section>
+
+    <section id="modal-howto" class="screen dim"><div class="panel wide"><h2>How to play</h2>
+      <div class="howto">
+        <div><h3>Move</h3><p><kbd>W</kbd><kbd>A</kbd><kbd>S</kbd><kbd>D</kbd> move · <kbd>Shift</kbd> sprint · <kbd>Space</kbd> jump, press again in the air to double jump. Drag the mouse to rotate the camera, scroll to zoom.</p></div>
+        <div><h3>Survive</h3><p>The floor is lava and it keeps rising. Stay above it, use checkpoints, and reach the exit door. You have 3 lives per level.</p></div>
+        <div><h3>Interact</h3><p>Hover furniture and pickups to highlight them. <kbd>E</kbd> or a mouse click activates checkpoints, grabs nearby items and inspects furniture.</p></div>
+        <div><h3>Chaos</h3><p>Every 30 to 45 seconds a random disaster hits: earthquakes, low gravity, object rain, collapsing platforms and lava surges.</p></div>
+        <div><h3>Power-ups</h3><p>🦘 Super Jump · 🛡️ Lava Shield · ⏱️ Time Freeze · ⚡ Speed Boost. Coins +10, stars +100, near-misses +50.</p></div>
+      </div><div class="row"><button class="btn btn-hero small" data-close="modal-howto">Got it</button></div></div></section>
+
+    <section id="modal-settings" class="screen dim"><div class="panel"><h2>Settings</h2>
+      <label class="check"><input type="checkbox" id="set-sound" /> Sound effects</label>
+      <label class="check"><input type="checkbox" id="set-shake" /> Screen shake</label>
+      <label class="check"><input type="checkbox" id="set-unlock" /> Unlock all levels (demo)</label>
+      <div class="row"><button class="btn small danger" id="btn-reset-save">Reset saved progress</button><button class="btn btn-hero small" data-close="modal-settings">Done</button></div></div></section>
+
+    <div id="vignette"></div>
+  </div>
+
+  <!-- Touch controls: shown only on touch devices while a level is being played. They send the same key events as the keyboard. -->
+  <div id="touch" hidden>
+    <div id="stick" aria-label="Move"><div id="knob"></div></div>
+    <div id="tbtns">
+      <button id="t-interact" type="button" aria-label="Interact">E</button>
+      <button id="t-sprint" type="button" aria-label="Sprint">Run</button>
+      <button id="t-jump" type="button" aria-label="Jump">Jump</button>
+    </div>
+  </div>
+  <style>
+    #touch{position:fixed;inset:0;z-index:30;pointer-events:none;user-select:none;-webkit-user-select:none;touch-action:none}
+    #touch[hidden]{display:none}
+    #stick{position:absolute;left:max(22px,env(safe-area-inset-left));bottom:max(26px,env(safe-area-inset-bottom));width:132px;height:132px;border-radius:50%;background:rgba(255,247,236,.14);border:3px solid rgba(255,247,236,.45);pointer-events:auto;touch-action:none}
+    #knob{position:absolute;left:50%;top:50%;width:58px;height:58px;margin:-29px 0 0 -29px;border-radius:50%;background:rgba(255,210,63,.85);box-shadow:0 4px 12px rgba(0,0,0,.35)}
+    #tbtns{position:absolute;right:max(22px,env(safe-area-inset-right));bottom:max(26px,env(safe-area-inset-bottom));display:grid;grid-template-columns:auto auto;gap:14px;align-items:end;justify-items:end}
+    #tbtns button{pointer-events:auto;touch-action:none;border:3px solid rgba(255,247,236,.7);color:#fff7ec;font:700 18px system-ui,sans-serif;border-radius:50%;background:rgba(255,90,31,.78);box-shadow:0 5px 14px rgba(0,0,0,.35)}
+    #t-jump{grid-column:1 / 3;width:96px;height:96px}
+    #t-sprint,#t-interact{width:66px;height:66px;background:rgba(68,32,79,.8)!important}
+    #tbtns button.down{transform:scale(.92);filter:brightness(1.3)}
+    @media (max-height:420px){#stick{width:108px;height:108px}#t-jump{width:80px;height:80px}#t-sprint,#t-interact{width:56px;height:56px}}
+  </style>
+  <script>
+  (function () {
+    if (!matchMedia('(pointer: coarse)').matches) return;
+    var touch = document.getElementById('touch'), hud = document.getElementById('hud'), down = {};
+    function key(code, on) { if (!!down[code] === on) return; down[code] = on; window.dispatchEvent(new KeyboardEvent(on ? 'keydown' : 'keyup', { code: code, key: code, bubbles: true })); }
+    // Show the controls only while a level is actually being played.
+    setInterval(function () {
+      var playing = hud && getComputedStyle(hud).display !== 'none' && getComputedStyle(hud).visibility !== 'hidden' &&
+        !document.querySelector('#screen-pause.show,#screen-complete.show,#screen-over.show,#modal-howto.show,#modal-settings.show,#screen-menu.show,#screen-levels.show,#screen-chars.show,#screen-loading.show');
+      touch.hidden = !playing;
+      if (!playing) Object.keys(down).forEach(function (c) { key(c, false); });
+    }, 200);
+    // Joystick -> W / A / S / D
+    var stick = document.getElementById('stick'), knob = document.getElementById('knob'), sid = null;
+    function move(e) {
+      var r = stick.getBoundingClientRect(), cx = r.left + r.width / 2, cy = r.top + r.height / 2, R = r.width / 2;
+      var dx = e.clientX - cx, dy = e.clientY - cy, d = Math.hypot(dx, dy) || 1, k = Math.min(d, R) / d;
+      knob.style.transform = 'translate(' + dx * k + 'px,' + dy * k + 'px)';
+      var nx = dx / R, ny = dy / R;
+      key('KeyW', ny < -0.35); key('KeyS', ny > 0.35); key('KeyA', nx < -0.35); key('KeyD', nx > 0.35);
+    }
+    function end() { sid = null; knob.style.transform = ''; ['KeyW', 'KeyA', 'KeyS', 'KeyD'].forEach(function (c) { key(c, false); }); }
+    stick.addEventListener('pointerdown', function (e) { sid = e.pointerId; stick.setPointerCapture(e.pointerId); move(e); e.preventDefault(); });
+    stick.addEventListener('pointermove', function (e) { if (e.pointerId === sid) move(e); });
+    stick.addEventListener('pointerup', end); stick.addEventListener('pointercancel', end);
+    // Buttons
+    function bind(id, code, hold) {
+      var b = document.getElementById(id);
+      b.addEventListener('pointerdown', function (e) { e.preventDefault(); b.setPointerCapture(e.pointerId); b.classList.add('down'); key(code, true); if (!hold) setTimeout(function () { key(code, false); }, 60); });
+      var up = function () { b.classList.remove('down'); if (hold) key(code, false); };
+      b.addEventListener('pointerup', up); b.addEventListener('pointercancel', up);
+    }
+    bind('t-jump', 'Space', false); bind('t-interact', 'KeyE', false); bind('t-sprint', 'ShiftLeft', true);
+    // Update the help text for touch players.
+    var mv = document.querySelector('#modal-howto .howto div p');
+    if (mv) mv.textContent = 'Use the left stick to move, Run to sprint and Jump to jump (tap again in the air to double jump). Drag anywhere else to rotate the camera. Tap E (or tap an object) to activate checkpoints and grab items. Landscape works best.';
+  })();
+  </script>
+</body>
+</html>

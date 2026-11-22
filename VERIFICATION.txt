@@ -1,0 +1,26 @@
+Revision 10 verification
+
+Changes
+- Intro uses a fitted native video player after the monitor zoom.
+- Intro transcoded from H.264 4:4:4 to H.264 Main, 4:2:0, AAC, fast-start MP4.
+- Intro pauses and mutes outside its scroll section, on hidden tabs and menu opening.
+- Project videos pause below 25% visibility; starting one pauses the others and intro.
+- Dark mobile menu with Close, divided links, focus cycling, Escape close and scroll locking.
+
+Verified
+- Production build passed.
+- All 7 existing API/RAG/validation tests passed.
+- Browser: 390px and 320px phone layouts and desktop; no horizontal overflow.
+- Unmuted intro, scrolled away: paused=true, muted=true, player hidden.
+- Played Neon Defender, scrolled away: paused=true.
+- All four project videos readyState=4, with no media errors.
+- Mobile menu opens, closes, and Home restores top navigation and unlocks scrolling.
+- No broken loaded images at 320px.
+
+Limits
+- Browser viewport checks are not physical iPhone/Android device testing.
+- Actual email delivery requires SMTP configuration; test mode did not send email.
+- Production backend endpoints and deployment were not exercised by the local Vite preview.
+- Site is delivered as source archive, not deployed.
+
+Revision 11 supersedes the fitted overlay: video is letterboxed onto the physical CRT canvas on desktop and mobile. Camera distance adapts to the viewport, and the chair/avatar are hidden during the close-up so the screen stays unobstructed. Separate Play/Pause and Enable/Mute sound buttons control the monitor video. Scroll-away pause/mute remains enabled. Removed menu plus signs; menu and page footer show Muhammad Basim only. Browser checked monitor playback at 390px and desktop; confirmed video paused/muted outside intro.

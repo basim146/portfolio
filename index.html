@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+<meta charset="utf-8">
+<title>Muhammad Basim — Game Developer</title>
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="description" content="Portfolio of Muhammad Basim, game developer (Unity, Unreal Engine, Three.js, C++/OpenGL). Click the desk, then scroll to step into the screen.">
+<meta property="og:title" content="Muhammad Basim — Game Developer">
+<meta property="og:description" content="I build worlds players love, and the moments that prove it.">
+<meta property="og:type" content="website">
+<meta property="og:image" content="og.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#F1ECFB">
+<meta name="color-scheme" content="light">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Instrument+Serif&family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700&family=Inter:wght@400;500&family=Noto+Naskh+Arabic:wght@400;700&display=swap" rel="stylesheet">
+<style id="loader-css">
+#loader{position:fixed;inset:0;z-index:9999;display:grid;place-items:center;background:#F1ECFB;color:#120D24;font-family:Inter,system-ui,sans-serif;transition:opacity .7s ease,visibility .7s}
+#loader.dark{background:#0F0B1C;color:#F1ECFB}
+#loader.done{opacity:0;visibility:hidden;pointer-events:none}
+#loader .ld{width:min(380px,82vw);text-align:center}
+#loader .ld-disc{width:76px;height:76px;margin:0 auto 22px;border-radius:50%;background:#6B3FE0;color:#fff;display:grid;place-items:center;font:800 24px/1 system-ui,sans-serif;letter-spacing:-.04em;animation:ldpulse 1.6s ease-in-out infinite;box-shadow:0 12px 34px rgba(107,63,224,.4)}
+#loader .ld-name{font:700 22px/1.1 system-ui,sans-serif;letter-spacing:-.02em;margin-bottom:22px}
+#loader .ld-bar{height:6px;border-radius:99px;background:rgba(107,63,224,.18);overflow:hidden}
+#loader .ld-fill{height:100%;width:0;border-radius:99px;background:#6B3FE0;transition:width .25s ease-out}
+#loader .ld-row{display:flex;justify-content:space-between;margin-top:12px;font-size:13px;opacity:.75}
+#loader .ld-slow{margin-top:18px;font-size:13px;line-height:1.5;opacity:0;transition:opacity .5s;min-height:40px}
+#loader .ld-slow.on{opacity:.85}
+@keyframes ldpulse{50%{transform:scale(1.08)}}
+@media (prefers-reduced-motion:reduce){#loader .ld-disc{animation:none}}
+body.loading{overflow:hidden}
+</style>
+<script>window.va=window.va||function(){(window.vaq=window.vaq||[]).push(arguments)}</script>
+<script defer src="/_vercel/insights/script.js"></script>
+</head>
+<body>
+<div id="loader" role="status" aria-live="polite" aria-label="Loading portfolio">
+  <div class="ld"><div class="ld-disc">MB</div><div class="ld-name">Muhammad Basim</div>
+    <div class="ld-bar" aria-hidden="true"><div class="ld-fill" id="ld-fill"></div></div>
+    <div class="ld-row"><span id="ld-msg">Setting up the desk…</span><span id="ld-pct">0%</span></div>
+    <div class="ld-slow" id="ld-slow"></div></div>
+</div>
+<script>document.body.classList.add('loading');try{if(document.documentElement.dataset.theme==='dark'||localStorage.getItem('theme')==='dark')document.getElementById('loader').classList.add('dark')}catch(e){}</script>
+<a class="skip" href="#about" data-i18n="skip_main">Skip to content</a>
+<noscript><p style="padding:90px 24px;font:16px system-ui">This portfolio uses an interactive 3D scene and needs JavaScript. You can still reach Muhammad Basim at muhammadbasim60@gmail.com · github.com/basim146 · linkedin.com/in/muhammad-basim-38a62b287</p></noscript>
+<nav>
+  <ul><li><a href="#top" data-i18n="nav_home">Home</a></li><li><a href="#work" data-i18n="nav_work">Work</a></li><li><a href="#about" data-i18n="nav_about">About</a></li><li><a href="#skills" data-i18n="nav_skills">Skills</a></li><li><a href="#do" data-i18n="nav_services">Services</a></li><li><a href="#edu" data-i18n="nav_edu">Education</a></li></ul>
+  <div class="nr"><select class="tbtn" id="lang" data-i18n-aria="lang_label" aria-label="Language"></select><button class="tbtn" id="th" aria-label="Toggle light and dark theme">Dark mode</button><button class="tbtn" id="menu-btn" aria-controls="mnav" aria-expanded="false" aria-label="Open menu" data-i18n="menu">Menu</button><a class="lt" href="#contact" data-i18n="lets_talk">Let’s talk</a></div>
+</nav>
+<div id="mnav" role="dialog" aria-modal="true" aria-label="Navigation menu" hidden>
+  <div class="menu-head"><button id="menu-close" type="button">✺ &nbsp; <span data-i18n="close">Close</span></button><a href="#contact" data-i18n="lets_talk">Let’s talk</a></div>
+  <div class="menu-links"><a href="#top" data-i18n="nav_home">Home</a><a href="#work" data-i18n="nav_work">Work</a><a href="#about" data-i18n="nav_about">About</a><a href="#skills" data-i18n="nav_skills">Skills</a><a href="#do" data-i18n="nav_services">Services</a><a href="#edu" data-i18n="nav_edu">Education</a></div>
+  <div class="menu-signature" aria-hidden="true">MUHAMMAD<br>BASIM</div>
+</div>
+
+<main id="top">
+  <div id="stage"><div id="pin">
+    <canvas id="c3" aria-label="Interactive 3D cubicle. Click the character to chat, click the monitor to jump to the intro."></canvas>
+    <div id="wm"><h1><span>Muhammad</span><b class="disc" id="disc"><i>MB</i></b><span>Basim</span></h1></div>
+    <div id="hint" data-i18n="hint">Click me, then scroll to step into the screen ↓</div>
+    <div id="hf">
+      <div class="hrow"><div><p class="tg" data-i18n="tagline">I’m a game developer who builds worlds players love, and the moments that prove it.</p><a class="btn" href="#work" style="margin-top:16px" data-i18n="view_projects">View my projects</a></div></div>
+      <div class="studio-note"><span data-i18n="studio1">From the first line of code to the final boss.</span><a href="#contact" data-i18n="studio2">Let’s build something worth playing.</a></div>
+    </div>
+    <button class="btn" id="snd">🔊 Play with sound</button>
+    <div id="bub"></div><div id="wash"></div>
+  </div></div>
+
+  <div class="tk" aria-hidden="true"><div id="tk"></div></div>
+
+  <section id="about"><div class="w rv" style="max-width:980px">
+    <h2 style="font-size:clamp(28px,4vw,54px);line-height:1.12" data-i18n-html="about_h">Good gameplay solves problems.<br>Great gameplay moves hearts.<br><span style="color:var(--acc)">I build both.</span></h2>
+    <p style="font-size:18px;max-width:700px" data-i18n="about_p">I’m most comfortable in Unity and equally at home in Unreal Engine. I also write my own C++ and OpenGL engine, with a focus on AI systems, gameplay mechanics and physics. I’m looking for a junior Game Developer role where I can build polished, player-first games.</p>
+  </div></section>
+
+  <section id="work" style="padding-top:20px"><div class="w"><h2 class="rv" data-i18n="work_h">featured case studies</h2>
+    <div class="ptools rv">
+      <input id="psearch" type="search" maxlength="60" data-i18n-ph="f_search" data-i18n-aria="f_search" placeholder="Search projects…" autocomplete="off">
+      <select id="psort" data-i18n-aria="f_sort" aria-label="Sort projects"><option value="feat" data-i18n="s_feat">Featured</option><option value="az" data-i18n="s_az">A to Z</option><option value="play" data-i18n="s_play">Playable first</option></select>
+    </div>
+    <div id="pchips" class="pchips rv" role="group"></div>
+    <p id="pcount" class="pcount" aria-live="polite"></p>
+    <div id="cs"></div><p id="pnone" class="pcount" hidden data-i18n="f_none">No projects match your search.</p></div></section>
+
+  <section id="skills"><div class="w"><h2 class="rv" data-i18n="skills_h">Skills &amp; technologies</h2><div id="sk" class="skgrid rv"></div></div></section>
+
+  <section id="do"><div class="w"><h2 class="rv" data-i18n="do_h">What I do</h2><div class="sv rv">
+    <div class="card"><span class="i">01</span><h3 data-i18n="c1_t">Game development</h3><p data-i18n="c1_p">Playable worlds with systems that feel good: AI opponents, physics and gameplay mechanics.</p><span class="chip">Unity</span><span class="chip">Unreal</span><span class="chip">C#</span><span class="chip">C++</span><span class="chip">Custom engine</span></div>
+    <div class="card"><span class="i">02</span><h3 data-i18n="c2_t">Real-time 3D</h3><p data-i18n="c2_p">Browser worlds and 3D art, from first model to a build you can open and play.</p><span class="chip">Three.js</span><span class="chip">WebGL</span><span class="chip">OpenGL</span><span class="chip">Blender</span></div>
+    <div class="card"><span class="i">03</span><h3 data-i18n="c3_t">Motion</h3><p data-i18n="c3_p">Trailers and intros that tell the story of a game through movement.</p><span class="chip">After Effects</span><span class="chip">Photoshop</span><span class="chip">Trailers</span></div>
+  </div></div></section>
+
+  <section id="ach" style="padding-top:20px"><div class="w"><h2 class="rv" data-i18n="ach_h">Achievements</h2><div class="achg rv">
+    <div class="card"><b class="big" data-count="5">0</b><p data-i18n="a1_t">games built across Unity, Unreal, Three.js and a custom engine</p></div>
+    <div class="card"><b class="big" data-count="1">0</b><p data-i18n="a2_t">2D game engine written from scratch in C++ and OpenGL</p></div>
+    <div class="card"><b class="big" data-count="2">0</b><p data-i18n="a3_t">Cega Institute certificates: Pre-Production and Unreal Engine</p></div>
+    <div class="card"><b class="big" data-count="6">0</b><p data-i18n="a4_t">chaos events in Don’t Touch the Floor, playable in the browser</p></div>
+  </div></div></section>
+
+  <section id="edu" style="padding-top:20px"><div class="w rv"><h2 data-i18n="edu_h">Education &amp; experience</h2>
+    <div class="tl"><span>2023 — 2027</span><div><h3 data-i18n="edu1_t">BE Computer Science</h3><p data-i18n="edu1_p">NED University of Engineering &amp; Technology, Karachi. Gaming &amp; Animation. Coursework in operating systems, networking and game design labs.</p></div></div>
+    <div class="tl"><span data-i18n="edu2_s">Ongoing</span><div><h3 data-i18n="edu2_t">Final Year Project: The Workshop</h3><p data-i18n="edu2_p">A 3D STEM game for kids aged 5 to 10.</p></div></div>
+    <div class="tl"><span data-i18n="edu3_s">Certifications</span><div><h3>Cega Institute</h3><p data-i18n="edu3_p">Pre-Production for Games · Unreal Engine Development</p></div></div>
+  </div></section>
+
+  <section id="contact"><div class="w">
+    <div class="rv"><h2 data-i18n="contact_h">Looking for a game developer?</h2><p style="font-size:18px;max-width:560px" data-i18n="contact_p">Have a project, internship or collaboration in mind? Tell me about it and I’ll get back to you.</p></div>
+    <form id="f" class="fm rv" novalidate>
+      <div>
+        <label data-i18n="l_what">What can I do for you?</label>
+        <div class="opt" data-k="w" role="group" aria-label="What can I do for you"><button type="button" data-i18n="o_game">Game development</button><button type="button" data-i18n="o_3d">3D art</button><button type="button" data-i18n="o_motion">Motion</button><button type="button" data-i18n="o_other">Other</button></div>
+        <label data-i18n="l_time">Project timeline</label>
+        <div class="opt" data-k="t" role="group" aria-label="Project timeline"><button type="button" data-i18n="t3">3 months</button><button type="button" data-i18n="t6">6 months</button><button type="button" data-i18n="t12">12 months</button><button type="button" data-i18n="t_unsure">Not sure</button></div>
+      </div>
+      <div>
+        <label><span data-i18n="l_name">Name</span><input name="name" maxlength="80" autocomplete="name"><span class="err" data-for="name"></span></label>
+        <label><span data-i18n="l_email">Email</span><input name="email" type="email" maxlength="254" autocomplete="email"><span class="err" data-for="email"></span></label>
+        <label><span data-i18n="l_subject">Subject</span><input name="subject" maxlength="120" autocomplete="off"><span class="err" data-for="subject"></span></label>
+        <label><span data-i18n="l_message">Message</span><textarea name="message" rows="3" maxlength="1500"></textarea><span class="err" data-for="message"></span></label>
+        <input class="hp" name="website" tabindex="-1" autocomplete="off" aria-hidden="true">
+        <button class="btn" type="submit" data-i18n="send">Send message →</button>
+        <div id="cm" role="status" aria-live="polite"></div>
+      </div>
+    </form>
+    <div class="rv" style="margin-top:70px"><h3 style="color:var(--bg);margin-bottom:8px" data-i18n="links_h">Resume &amp; links</h3><p style="margin-bottom:18px" data-i18n="links_p">Grab my latest CV, or reach me directly.</p><div id="links" class="links"></div></div>
+    <footer class="ft name-footer">Muhammad Basim</footer>
+  </div></section>
+</main>
+
+<button class="btn" id="ask" data-i18n="ask">Ask about Basim</button>
+<div id="chat" role="dialog" aria-label="Chat assistant">
+  <header><button type="button" id="speak" class="spk" aria-pressed="false" data-i18n-aria="speak_on" aria-label="Read answers aloud">🔇</button><b class="d" style="font-size:20px" data-i18n="chat_title">Ask about Basim</b><small id="chat-note" data-i18n="chat_note">Answers come only from his CV and projects</small></header>
+  <div id="log" aria-live="polite"></div>
+  <form id="cf"><button class="btn o" id="mic" type="button" data-i18n-aria="mic_title" aria-label="Ask by voice">🎤</button><input id="q" placeholder="Type your question" data-i18n-ph="chat_ph" maxlength="500" autocomplete="off" aria-label="Your question"><button class="btn" type="submit" data-i18n="chat_send">Send</button></form>
+</div>
+<div id="game" role="dialog" aria-label="Don’t Touch the Floor"><button class="btn" id="gx">Close ✕</button><a class="btn o" id="gnew" target="_blank" rel="noopener" data-i18n="game_newtab">Open in new tab (faster)</a><iframe title="Don’t Touch the Floor!" allow="fullscreen; autoplay"></iframe></div>
+
+<noscript><p style="padding:40px">Muhammad Basim — Game Developer. This portfolio needs JavaScript. Email: muhammadbasim60@gmail.com</p></noscript>
+<script type="module" src="/src/main.js"></script>
+</body>
+</html>

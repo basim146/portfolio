@@ -1,0 +1,104 @@
+[
+ {
+  "id": "profile",
+  "zone": "about",
+  "title": "Profile",
+  "text": "Muhammad Basim is a Computer Science student at NED University (Gaming & Animation) with hands-on experience shipping 2D and 3D games across Unity, Unreal Engine, and a custom-built C++/OpenGL engine. He is skilled in AI systems, gameplay mechanics, physics simulation, and rendering pipelines. He is seeking a junior Game Developer role to build polished, player-first experiences."
+ },
+ {
+  "id": "education",
+  "zone": "education",
+  "title": "Education",
+  "text": "Bachelor of Computer Science (BE), Gaming & Animation, at NED University of Engineering & Technology, Karachi, 2023 to 2027. Coursework includes operating systems, networking and game design labs."
+ },
+ {
+  "id": "cert-1",
+  "zone": "education",
+  "title": "Certifications",
+  "text": "Certifications from Cega Institute: Pre-Production for Games, and Unreal Engine Development. The certificates are framed on the wall of the 3D desk in the portfolio."
+ },
+ {
+  "id": "skills-engines",
+  "zone": "skills",
+  "title": "Skills: game engines",
+  "text": "Game engines: Unity (Advanced, including AR/VR), Unreal Engine (Intermediate), and a custom C++ engine built from scratch."
+ },
+ {
+  "id": "skills-lang",
+  "zone": "skills",
+  "title": "Skills: languages",
+  "text": "Programming languages: C# (Advanced), C++ (Intermediate), Python (Basic). He also built a browser game in JavaScript with Three.js."
+ },
+ {
+  "id": "skills-graphics",
+  "zone": "skills",
+  "title": "Skills: graphics and core",
+  "text": "Graphics: OpenGL and Blender (Basic). Core skills: AI systems, gameplay mechanics, physics simulation, object-oriented programming (OOP) and memory management."
+ },
+ {
+  "id": "neon",
+  "zone": "projects",
+  "title": "Project: Neon Defender",
+  "text": "Neon Defender is a custom 2D game engine in C++ and raw OpenGL, with no third-party frameworks. Basim built the full 2D game loop, renderer and asset pipeline. Physics and collision use vector-based movement with normalisation for frame-rate-independent physics, and bounce mechanics with state tracking to remove repeated-collision bugs. Visual systems include a procedural parallax starfield for depth and texture mapping with alpha blending for sprites. Memory safety: std::unique_ptr is used throughout, with zero memory leaks across the entity lifecycle."
+ },
+ {
+  "id": "blade",
+  "zone": "projects",
+  "title": "Project: Blade of Shadows",
+  "text": "Blade of Shadows is a Unity and C# game. Enemy AI has three archetypes: Skeleton (slow melee), Knight (fast ranged) and a Boss with adaptive difficulty scaling based on player health. The narrative system is an NPC dialogue tree across three characters (Arven, Eldrin and Daughter) that drives story progression. It is a full game loop with player combat, enemy AI, UI and win/loss conditions, delivered within a single semester."
+ },
+ {
+  "id": "ignition",
+  "zone": "projects",
+  "title": "Project: Ignition X",
+  "text": "Ignition X is a racing game in Unreal Engine using Blueprints. AI opponents have dynamic overtaking logic and reverse-recovery behaviour for stuck vehicles. Race systems include vehicle physics, a 3-lap race structure, a minimap, speedometer HUD and position tracking for a 7-car field. The track environment and assets were optimised for smooth frame rate on target hardware."
+ },
+ {
+  "id": "rage",
+  "zone": "projects",
+  "title": "Project: Rage Room",
+  "text": "Rage Room is a first-person VR game by Muhammad Basim. The player picks a weapon from a Choose Weapon menu (a pistol is shown in the reel) and destroys barrels and targets inside a bright sci-fi chamber. It was developed and tested with an XR device simulator. It is one of the games in his games reel."
+ },
+ {
+  "id": "dtf",
+  "zone": "arcade",
+  "title": "Project: Don't Touch the Floor",
+  "text": "Don't Touch the Floor is a browser game built with Three.js and Vite that can be played inside this portfolio's Arcade. The floor is lava and the player must stay off it. It has 3 rooms (Bedroom easy, Living Room medium, Kitchen hard), 3 characters (Lazy Guy, Froggy, Penguin), 4 power-ups and 6 chaos events, with procedural assets and sounds. The best score is saved in the browser."
+ },
+ {
+  "id": "contact",
+  "zone": "contact",
+  "title": "Contact",
+  "text": "Contact Basim by email at muhammadbasim60@gmail.com, by WhatsApp or phone on 0316-1337162 (https://wa.me/923161337162), or with the contact form at the bottom of the portfolio. His GitHub is https://github.com/basim146 and his LinkedIn is https://www.linkedin.com/in/muhammad-basim-38a62b287/. His CV can be opened from the Resume & links section at the bottom of the portfolio. His older portfolio site is muhmmadbasimportfolio.netlify.app, which has game screenshots. Source code and builds of his projects are available on request."
+ },
+ {
+  "id": "portfolio-site",
+  "zone": "home",
+  "title": "About this portfolio",
+  "text": "This portfolio is an interactive 3D cubicle built with Three.js. Visitors can click the animated avatar of Basim (he waves and talks), then scroll to fly into the retro monitor, which plays his intro video. The page continues with case studies, services, education, a contact form and this chatbot. The site is available in English, Urdu, French, Turkish, German and Arabic, with light and dark themes."
+ },
+ {
+  "id": "role",
+  "zone": "about",
+  "title": "Career goal",
+  "text": "Basim is looking for a junior Game Developer role. He has no formal work experience listed yet, and his projects are his hands-on experience."
+ },
+ {
+  "id": "workshop",
+  "zone": "education",
+  "title": "Final Year Project: The Workshop",
+  "text": "The Workshop is Basim's ongoing Final Year Project: a 3D STEM game for kids aged 5 to 10."
+ },
+ {
+  "id": "tools",
+  "zone": "skills",
+  "title": "Skills: tools",
+  "text": "Tools and software: Unity (primary), Unreal Engine, Three.js, a custom C++ and OpenGL engine, Blender, After Effects, Photoshop, and Git. Languages: C#, C++, Python and JavaScript."
+ },
+ {
+  "id": "services",
+  "zone": "skills",
+  "title": "What he offers",
+  "text": "Basim offers game development (AI opponents, physics, gameplay mechanics in Unity and Unreal), real-time 3D for the browser (Three.js, WebGL, OpenGL, Blender) and motion work such as trailers and intros (After Effects, Photoshop)."
+ }
+]
