@@ -1,11 +1,8 @@
 // RAG pipeline: chunks -> embeddings -> in-memory vector index -> retrieval -> grounded LLM answer.
 // Falls back to keyword (TF-IDF) retrieval + extractive answers when GEMINI_API_KEY is not set.
-import { readFileSync } from 'node:fs';
-import { fileURLToPath } from 'node:url';
-import { dirname, join } from 'node:path';
+import knowledge from './knowledge.json' with { type: 'json' };
 
-const here = dirname(fileURLToPath(import.meta.url));
-export const chunks = JSON.parse(readFileSync(join(here, 'knowledge.json'), 'utf8'));
+export const chunks = knowledge;
 
 const API = 'https://generativelanguage.googleapis.com/v1beta';
 const STOP = new Set('a an the is are was were of to in on for and or with what who how does do did his he him about tell me you your can i it this that at as by be from has have basim muhammad'.split(' '));
